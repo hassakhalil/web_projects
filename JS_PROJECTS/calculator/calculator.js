@@ -1,70 +1,43 @@
-//listen on for events (button clicks)
-//types of events
-//clear :
-//      clear-entry-> remove the last entry
-//      clear-all-->  reset the number to zero
-//number : add the number associated the the button to the number
-//operator : 
-//           store the first the number somewhere
-//           reset the first variable to 0
-//           wait for the user to enter the second operand
-//           perform the operation  
+
 let number="";
 let add = -1;
 let sub = -1;
 let div = -1;
 let mul = -1;
 
+function update(n){
+    number +=n;
+    document.querySelector(".result").innerHTML = number;
+}
+
+function empty_number()
+{
+    number = "";
+    document.querySelector(".result").innerHTML = "0";
+}
+
 const one =document.querySelector(".one");
-one.addEventListener("click",function() {
-    number+="1";
-    document.querySelector(".result").innerHTML = number;
-});
+one.addEventListener("click",function() {update("1");});
 const two =document.querySelector(".two");
-two.addEventListener("click",function() {
-    number+="2";
-    document.querySelector(".result").innerHTML = number;
-});
+two.addEventListener("click",function() {update("2");});
 const three =document.querySelector(".three");
-three.addEventListener("click",function() {
-    number+="3";
-    document.querySelector(".result").innerHTML = number;
-});
+three.addEventListener("click",function() {update("3");});
 const four =document.querySelector(".four");
-    four.addEventListener("click",function() {number+="4";
-    document.querySelector(".result").innerHTML = number;
-});
+four.addEventListener("click",function() {update("4");});
 const five =document.querySelector(".five");
-    five.addEventListener("click",function() {number+="5";
-    document.querySelector(".result").innerHTML = number;
-});
+five.addEventListener("click",function() {update("5");});
 const six =document.querySelector(".six");
-six.addEventListener("click",function() {
-    number+="6";
-    document.querySelector(".result").innerHTML = number;
-});
+six.addEventListener("click",function() {update("6");});
 const seven =document.querySelector(".seven");
-seven.addEventListener("click",function() {
-    number+="7";
-    document.querySelector(".result").innerHTML = number;
-});
+seven.addEventListener("click",function() {update("7");});
 const eight =document.querySelector(".eight");
-eight.addEventListener("click",function() {
-    number+="8";
-    document.querySelector(".result").innerHTML = number;
-});
+eight.addEventListener("click",function() {update("8");});
 const nine =document.querySelector(".nine");
-nine.addEventListener("click",function() {
-    number+="9";
-    document.querySelector(".result").innerHTML = number;
-});
+nine.addEventListener("click",function() {update("9");});
 const zero =document.querySelector(".zero");
-zero.addEventListener("click",function() {
-    if (number.length > 0)
-        number+="0";
-    document.querySelector(".result").innerHTML = number;
-});
+zero.addEventListener("click",function() {update("0");});
 const equality =document.querySelector(".equality");
+
 equality.addEventListener("click",function() {
     document.querySelector(".result").innerHTML = number;
     let tmp =parseInt(number);
@@ -83,35 +56,30 @@ equality.addEventListener("click",function() {
 const addition =document.querySelector(".addition");
 addition.addEventListener("click",function() {
     add = parseInt(number);
-    number = "";
-    document.querySelector(".result").innerHTML = "0";
+    empty_number();
 });
 
 const substraction =document.querySelector(".substraction");
 substraction.addEventListener("click",function() {
     sub = parseInt(number);
-    number = "";
-    document.querySelector(".result").innerHTML = "0";
+    empty_number();
 });
 
 const multiplication =document.querySelector(".multiplication");
 multiplication.addEventListener("click",function() {
     mul = parseInt(number);
-    number = "";
-    document.querySelector(".result").innerHTML = "0";
+    empty_number();
 });
 
 const division =document.querySelector(".division");
 division.addEventListener("click",function() {
     div = parseInt(number);
-    number = "";
-    document.querySelector(".result").innerHTML = "0";
+    empty_number();
 });
 
 const clearAll = document.querySelector(".clear-all");
 clearAll.addEventListener("click", function(){
-    number = "";
-    document.querySelector(".result").innerHTML = "0";
+    empty_number();
 });
 
 const clearEntry = document.querySelector(".clear-entry");
