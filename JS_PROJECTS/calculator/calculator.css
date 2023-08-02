@@ -1,0 +1,125 @@
+
+.buttona {
+    font-size: 35px;
+    border-radius: 0px;
+    color: white;
+    background-color: lightgray;
+    border: 1px solid black;
+    /* padding: 32px 32px; */
+}
+
+.buttona:hover {
+  background-color: rgba(211, 211, 211, 0.717);
+  /* color: white; */
+}
+.buttona.operator:hover {
+    background-color: rgba(255, 166, 0, 0.721);
+    /* color: white; */
+  }
+
+.operator {
+    background-color: orange;    
+}
+.result {
+    font-size: 45px;
+    border-radius: 0px;
+    color: white;
+    grid-area: result;
+    background-color: black;
+    border: 1px solid black;
+    justify-self: end;
+    align-self: center;
+}
+
+.division {
+    grid-area: division;
+}
+
+.multiplication {
+    grid-area: multiplication;
+}
+
+.substraction {
+    grid-area: substraction;
+}
+
+.addition {
+    grid-area: addition;
+}
+
+.equality {
+    grid-area: equality;
+}
+
+.zero {
+    grid-area: zero;
+}
+
+
+.one {
+    grid-area: one;
+}
+
+.two {
+    grid-area: two;
+}
+
+.three {
+    grid-area: three;
+}
+
+.four {
+    grid-area: four;
+}
+
+.five {
+    grid-area: five;
+}
+
+.six {
+    grid-area: six;
+}
+
+.seven {
+    grid-area: seven;
+}
+
+.eight {
+    grid-area: eight;
+}
+
+.nine {
+    grid-area: nine;
+}
+
+.number {
+    color: black;
+}
+
+
+.grid-container {
+    height: 600px;
+    width: 400px;    
+    /* justify-content: center; */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    background-color:black;
+    display: grid;
+    grid-template-areas: 
+    "result    result    result      result"
+    "clear-all clear-all clear-entry division"
+    "seven     eight     nine        multiplication"
+    "four      five      six         substraction"
+    "one       two       three       addition"
+    "zero      zero      zero        equality";
+
+}
+
+.clear-all {
+    grid-area: clear-all;
+    color: black;
+}
+
+.clear-entry {
+    grid-area: clear-entry;
+    color: black;
+}

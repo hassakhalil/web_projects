@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Chat Application</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+  // Create a chat object
+  var chat = {};
+
+  // Create a list of messages
+  chat.messages = [];
+
+  // Add a message to the list
+  chat.addMessage = function(message) {
+    var li = document.createElement("li");
+    li.textContent = message;
+    $("ul.messages").append(li);
+  };
+
+  // Start listening for new messages
+  $("#submit").click(function() {
+    var message = $("#message").val();
+    chat.addMessage(message);
+  });
+});
+</script>
+</head>
+<body>
+<h1>Chat Application</h1>
+<input type="text" id="message" placeholder="Enter your message here...">
+<input type="submit" value="Send" id="submit">
+<ul class="messages"></ul>
+</body>
+</html>
