@@ -1,19 +1,21 @@
 
-let number="";
+let number="0";
 let add = -1;
 let sub = -1;
 let div = -1;
 let mul = -1;
 
 function update(n){
+    if (number === "0")
+        number = "";
     number +=n;
     document.querySelector(".result").innerHTML = number;
 }
 
 function empty_number()
 {
-    number = "";
-    document.querySelector(".result").innerHTML = "0";
+    number = "0";
+    document.querySelector(".result").innerHTML = number;
 }
 
 const one =document.querySelector(".one");
@@ -37,9 +39,8 @@ nine.addEventListener("click",function() {update("9");});
 const zero =document.querySelector(".zero");
 zero.addEventListener("click",function() {update("0");});
 const equality =document.querySelector(".equality");
-
 equality.addEventListener("click",function() {
-    document.querySelector(".result").innerHTML = number;
+    document.querySelector(".result").innerHTML = "0";
     let tmp =parseInt(number);
     if (add !== -1)
         tmp = add + parseInt(number);
@@ -48,7 +49,7 @@ equality.addEventListener("click",function() {
     else if (mul !== -1)
         tmp = mul * parseInt(number);
     else if (div !== -1)
-        tmp = div/parseInt(number);         
+        tmp = div / parseInt(number);         
     add = sub = mul = div  =-1;
     number = tmp.toString();
     document.querySelector(".result").innerHTML = number;
